@@ -1,49 +1,24 @@
-# Week 2 PHP Store Project
+# Week 3 PHP Store Project
 
-This Week 2 version gives you:
-- a basic textual catalog with 5 products
-- a working shopping cart
-- add / remove / quantity update / checkout
-- navigation between catalog and cart
-- a MySQL database script you can import now
-- PHP framework files ready for Week 3 database integration
+This is the Week 3 version of the PHP shopping cart project.
 
-## Folder structure
-- `index.php` - catalog page
-- `cart.php` - shopping cart page
-- `checkout.php` - checkout action
-- `includes/header.php` - shared page header
-- `includes/footer.php` - shared footer
-- `includes/products.php` - starter product data for Week 2
-- `includes/functions.php` - cart helper functions
-- `css/style.css` - store styling
-- `database/store.sql` - database schema and sample products for later use
+## What changed from Week 2
 
-## What this covers for Week 2
-Week 2 focuses on:
-1. Creating the database structure
-2. Building the application framework
-3. Creating the pages and reusable layout
-4. Demonstrating the basic shopping flow
+- Products now come from the MySQL database.
+- Added a database connection file using PDO.
+- Checkout now saves orders and order items to the database.
+- Cart still uses PHP sessions.
+- Catalog and cart pages are connected to database data.
 
-For Week 2, products are loaded from `includes/products.php` so your project works immediately.
-In Week 3, you can replace that with MySQL queries from the `products` table.
+## Setup Instructions
 
-## How to run it with XAMPP
-1. Install XAMPP.
-2. Start Apache.
-3. Place the `week2_store` folder inside `C:\xampp\htdocs\`
-4. Open `http://localhost/week2_store/`
+1. Start XAMPP.
+2. Start Apache and MySQL.
+3. Put the `week3_store` folder into `C:\xampp\htdocs\`.
+4. Open phpMyAdmin.
+5. Import `database/store.sql`.
+6. Open `http://localhost/week3_store/`.
 
-## How to import the database
-1. Start MySQL in XAMPP.
-2. Open phpMyAdmin.
-3. Create a database named `week2_store`.
-4. Click the new database.
-5. Choose Import.
-6. Import the file `database/store.sql`.
+## Database Name
 
-## What to submit for Week 2
-- updated project plan
-- link to your GitHub repository
-- your code files
+The database is named `week2_store` so it works with your Week 2 database name. If you use a different name, update `includes/db.php`.

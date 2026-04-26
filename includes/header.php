@@ -1,8 +1,9 @@
 <?php
 $cartCount = 0;
+
 if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-    foreach ($_SESSION['cart'] as $qty) {
-        $cartCount += $qty;
+    foreach ($_SESSION['cart'] as $quantity) {
+        $cartCount += (int) $quantity;
     }
 }
 ?>
@@ -19,8 +20,9 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
         <div class="container header-flex">
             <div>
                 <h1>Bright Market</h1>
-                <p class="tagline">Simple PHP Shopping Cart Store</p>
+                <p class="tagline">Simple PHP and MySQL Shopping Cart Store</p>
             </div>
+
             <nav>
                 <a href="index.php">Catalog</a>
                 <a href="cart.php">Cart (<?php echo $cartCount; ?>)</a>
@@ -32,8 +34,8 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
         <?php if (!empty($_SESSION['message'])): ?>
             <div class="flash-message">
                 <?php
-                echo htmlspecialchars($_SESSION['message']);
-                unset($_SESSION['message']);
+                    echo htmlspecialchars($_SESSION['message']);
+                    unset($_SESSION['message']);
                 ?>
             </div>
         <?php endif; ?>

@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS week2_store;
-USE week2_store;
+CREATE DATABASE IF NOT EXISTS sdc310l_project;
+USE sdc310l_project;
 
 DROP TABLE IF EXISTS order_items;
 DROP TABLE IF EXISTS orders;
@@ -28,11 +28,15 @@ CREATE TABLE order_items (
     quantity INT NOT NULL,
     product_cost DECIMAL(10,2) NOT NULL,
     line_total DECIMAL(10,2) NOT NULL,
-    CONSTRAINT fk_order_items_order FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    CONSTRAINT fk_order_items_product FOREIGN KEY (product_id) REFERENCES products(product_id)
+    CONSTRAINT fk_order_items_order
+        FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    CONSTRAINT fk_order_items_product
+        FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
-INSERT INTO products (product_id, product_name, product_description, product_cost) VALUES
+INSERT INTO products 
+(product_id, product_name, product_description, product_cost) 
+VALUES
 (101, 'Wireless Mouse', 'Compact wireless mouse with ergonomic grip.', 19.99),
 (102, 'Mechanical Keyboard', 'Backlit keyboard with responsive mechanical keys.', 49.99),
 (103, 'USB-C Hub', 'Multiport hub with HDMI, USB, and SD card support.', 34.99),

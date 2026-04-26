@@ -1,9 +1,12 @@
 <?php
 session_start();
-require_once 'includes/products.php';
+
+require_once 'includes/db.php';
 require_once 'includes/functions.php';
 
+$products = getProducts($pdo);
 initializeCart($products);
+
 $cartItems = getCartItems($products, $_SESSION['cart']);
 $totals = calculateTotals($cartItems);
 
@@ -24,11 +27,12 @@ require_once 'includes/header.php';
                 <tr>
                     <th>Product ID</th>
                     <th>Product Name</th>
-                    <th>Quantity ordered</th>
-                    <th>Product Cost (individual)</th>
+                    <th>Quantity Ordered</th>
+                    <th>Product Cost Individual</th>
                     <th>Product Total</th>
                 </tr>
             </thead>
+
             <tbody>
                 <?php foreach ($cartItems as $item): ?>
                     <tr>
@@ -45,10 +49,11 @@ require_once 'includes/header.php';
 
     <div class="totals-card">
         <h3>Order Summary</h3>
-        <p><strong>Total of items ordered:</strong> $<?php echo number_format($totals['subtotal'], 2); ?></p>
-        <p><strong>Tax (5%):</strong> $<?php echo number_format($totals['tax'], 2); ?></p>
-        <p><strong>Shipping &amp; Handling (10%):</strong> $<?php echo number_format($totals['shipping'], 2); ?></p>
-        <p class="grand-total"><strong>Order Total:</strong> $<?php echo number_format($totals['grandTotal'], 2); ?></p>
+
+        <p><strong>Total of Items Ordered:</strong> $<?php echo number_format($totals['subtotal'], 2); ?></p>
+        <p><strong>Tax 5%:</strong> $<?php echo number_format($totals['tax'], 2); ?></p>
+        <p><strong>Shipping and Handling 10%:</strong> $<?php echo number_format($totals['shipping'], 2); ?></p>
+        <p class="grand-total"><strong>Order Total:</strong> $<?php echo number_format($totals['grand_total'], 2); ?></p>
 
         <div class="cart-buttons">
             <a class="link-button secondary-link" href="index.php">Continue Shopping</a>
