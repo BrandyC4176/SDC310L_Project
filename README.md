@@ -1,20 +1,29 @@
-# Week 4 PHP Store Project - MVC Version
+## Project Summary
 
-This is the Week 4 version of the PHP shopping cart project.
+This project is a PHP and MySQL shopping cart web application developed for SDC310L. The application allows users to browse products, add items to a cart, update quantities, remove products, and complete a checkout process. Product and order information is stored in a MySQL database, and the final version of the application uses an MVC architecture to improve organization and maintainability.
 
-## What changed for Week 4
-The application was reorganized into an MVC-style structure.
+## Features
+* Product catalog with database-driven data
+* Shopping cart using PHP sessions
+* Add, remove, and update quantity functionality
+* Order subtotal, tax, shipping, and total calculations
+* Checkout process with database order storage
+* MVC project structure
+* MySQL database integration using PDO
+* Technologies Used
+* PHP
+* MySQL
+* XAMPP
+* HTML/CSS
+* MVC Architecture
+* GitHub
 
-- Models handle database and cart/order data logic.
-- Controllers handle requests and decide what view to show.
-- Views handle the HTML output.
-- The public folder contains the pages the user visits in the browser.
 
-## Setup Instructions
-1. Start XAMPP.
-2. Start Apache and MySQL.
-3. Put the `sdc310l_project` folder inside `C:\xampp\htdocs\`.
-4. Import `database/store.sql` in phpMyAdmin.
-5. Open `http://localhost/sdc310l_project/public/`.
+## Database Name: 
+sdc310l_project
 
-Database name: `sdc310l_project`
+## How to Run the Project
+1. Start Apache and MySQL in XAMPP.
+2. Import the SQL database script into phpMyAdmin.
+3. Place the project folder inside htdocs.
+4. Open the application in a browser using localhost.
